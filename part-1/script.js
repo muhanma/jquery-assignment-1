@@ -6,52 +6,39 @@
 
 //3. Create a div element with a class name of "view" and append it to the document body using jQuery. You can use append, appendTo, or any other jQuery method.
 
-var view = document.createElement("div");
-view.className = "view";
-$( view ).appendTo(document.body);
+$("<div>").addClass("view").appendTo(document.body)
 
 //4. Create a div element with a class name of "grass" and append it to the previously created "view" div from step 3.
 
-var grass = document.createElement("div");
-grass.className = "grass";
-$( grass ).appendTo( $(view) );
+$("<div>").addClass("grass").appendTo(".view")
 
 //5.  Create a div element with a class name of "sun" and append it to the previously created "view" div from step 3.
 
-var sun = document.createElement("div");
-sun.className = "sun";
-$(sun).appendTo($(view));
+$("<div>").addClass("sun").appendTo(".view")
 //6.  Write a while loop to create 5 divs. The div classes will be "ray-1", "ray-2", "ray-3", "ray-4", and "ray-5". Append each of these divs to the previously created "sun" div from step 5.
 
 var rayN = 1;
 while (rayN <= 5) {
-    var ray = document.createElement("div");
-    ray.className = "ray-"+rayN;
-   $(ray).appendTo($(sun));
+     $("<div>").addClass("ray-" + rayN)
+    .appendTo(".sun");
     rayN++;
 }
 
 //7. Create a div element with a class name of "mountain" and append it to the previously created "view" div from step 3.
 
-var mountain = document.createElement("div");
-mountain.className = "mountain";
-$(mountain).appendTo($(view));
+$("<div>").addClass("mountain").appendTo(".view")
 
 //8. Create a div element with a class name of "mountain-top" and append it to the previously created "mountain" div from step 7.
 
-var Top = document.createElement("div");
-Top.className = "mountain-top";
-$(Top).appendTo($(mountain));
+$("<div>").addClass("mountain-top").appendTo(".mountain")
 
 //9. Write a do...while loop to create 3 divs. The div classes will be "mountain-cap-1", "mountain-cap-2", and "mountain-cap-3". Append each of these divs to the previously created "mountain-top" div from step 
 var cap = 0;
 do {
-    var mountainCap = document.createElement("div");
-    mountainCap.className = 'mountain-cap-' + (cap + 1);    
-     $(mountainCap).appendTo($(Top));
+    $("<div>").addClass("mountain-cap-" + cap)
+    .appendTo(".mountain-top");
     cap ++;
 } while (cap <= 3);
-
 
 
 // My Previous Work
